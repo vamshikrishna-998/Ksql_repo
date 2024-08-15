@@ -1,0 +1,11 @@
+CREATE STREAM customer_transactions_stream (  
+  customer_id STRING,
+  month STRING,
+  category STRING,
+  payment_type STRING,
+  spend INT,
+  transaction_id BIGINT
+) WITH (
+  KAFKA_TOPIC = 'customer_transaction_topic',
+  VALUE_FORMAT = 'JSON'
+);
