@@ -1,0 +1,31 @@
+{
+  "type": "record",
+  "name": "CustomerTransaction",
+  "namespace": "com.example",
+  "fields": [
+    {
+      "name": "customer_id",
+      "type": "string"
+    },
+    {
+      "name": "month",
+      "type": "string"
+    },
+    {
+      "name": "category",
+      "type": "string"
+    },
+    {
+      "name": "payment_type",
+      "type": "string"
+    },
+    {
+      "name": "spend",
+      "type": "int"
+    },
+    {
+      "name": "transaction_id",
+      "type": "long"
+    }
+  ]
+}
