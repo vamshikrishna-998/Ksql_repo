@@ -1,0 +1,10 @@
+CREATE STREAM trans_cust_join AS
+SELECT 
+    t.customer_id,
+    t.spend,
+    t.payment_type,
+    c.salary
+FROM transactions_stream t
+LEFT JOIN customer_table c
+    ON t.customer_id = c.customer_id
+EMIT CHANGES;
