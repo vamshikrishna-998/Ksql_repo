@@ -1,9 +1,9 @@
-CREATE STREAM trans_cust_join AS
+CREATE STREAM trans_cust_stream AS
 SELECT 
-    t.customer_id,
-    t.spend,
-    t.payment_type,
-    c.salary
+    t.customer_id as customer_id,
+    t.spend AS spend,
+    t.payment_type as payment_type,
+    c.salary AS salary
 FROM transactions_stream t
 LEFT JOIN customer_table c
     ON t.customer_id = c.customer_id
