@@ -6,10 +6,10 @@ SELECT
   gender,
   age,
   salary,
-  address->street AS address_street,
-  address->city AS address_city,
-  address->state AS address_state,
-  address->zipcode AS address_zipcode,
-  address->country AS address_country
+  address->street AS street,
+  address->city AS city,
+  address->state AS state,
+  address->zipcode AS zipcode,
+  address->country AS country
 FROM customer_stream
 EMIT CHANGES;
