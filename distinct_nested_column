@@ -1,0 +1,7 @@
+-- Query to find distinct keys in the JSON address column
+SELECT DISTINCT 
+    [key] AS DistinctColumnName
+FROM 
+    class
+CROSS APPLY 
+    OPENJSON(address)
