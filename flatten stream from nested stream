@@ -1,0 +1,15 @@
+CREATE STREAM flattened_customer_stream AS
+SELECT 
+  customer_id,
+  name,
+  email,
+  gender,
+  age,
+  salary,
+  address->street AS street,
+  address->city AS city,
+  address->state AS state,
+  address->zipcode AS zipcode,
+  address->country AS country
+FROM customer_stream
+EMIT CHANGES;
