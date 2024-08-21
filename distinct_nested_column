@@ -5,3 +5,9 @@ FROM
     class
 CROSS APPLY 
     OPENJSON(address)
+
+
+--Query to find records for selected keys of nested columns
+select 
+JSON_value(column_name, '$.key') as new_name
+from table;
