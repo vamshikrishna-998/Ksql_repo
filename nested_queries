@@ -9,5 +9,6 @@ CROSS APPLY
 
 --Query to find records for selected keys of nested columns
 select 
-JSON_value(column_name, '$.key') as new_name
+JSON_value(column_name, '$.key') as new_name,
+(select value from openjson(columname, '$.key')) as new_name
 from table;
