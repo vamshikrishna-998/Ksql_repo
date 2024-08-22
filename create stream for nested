@@ -5,6 +5,9 @@ CREATE STREAM customer_stream (
   gender STRING,
   age INTEGER,
   salary INTEGER,
+  ContactDetails STRUCT <
+    Phone ARRAY<STRING>,
+    Email STRING>
   address STRUCT<
     street STRING,
     city STRING,
