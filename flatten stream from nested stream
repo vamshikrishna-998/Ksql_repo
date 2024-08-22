@@ -6,6 +6,7 @@ SELECT
   gender,
   age,
   salary,
+  address->phone[0] AS phone,
   address->street AS street,
   address->city AS city,
   address->state AS state,
