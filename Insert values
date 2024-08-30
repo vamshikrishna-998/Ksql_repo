@@ -1,0 +1,17 @@
+INSERT INTO customer_stream (
+  CUSTOMER_ID,
+  NAME,
+  EMAIL,
+  GENDER,
+  AGE,
+  SALARY,
+  ADDRESS
+) VALUES (
+  'CUS370',
+  'Brandon Robbins',
+  'fred86@example.net',
+  'Non-binary',
+  26,
+  100264,
+  '985 Figueroa Lodge Suite 872\nEast Wanda, MD 95634'
+);
