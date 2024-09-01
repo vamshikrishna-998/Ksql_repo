@@ -1,0 +1,3 @@
+select count_distinct(customer_id) from CUSTOMER_STREAM
+where age > 41
+EMIT CHANGES;
