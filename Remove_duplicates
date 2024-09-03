@@ -1,0 +1,17 @@
+CREATE TABLE staging_customers WITH (
+  KAFKA_TOPIC='staging_customer_table_topic',
+  VALUE_FORMAT='JSON',
+  KEY_FORMAT='JSON'  -- Use JSON format for composite keys
+) AS SELECT 
+  CUSTOMER_ID,
+  NAME,
+  EMAIL,
+  GENDER,
+  AGE,
+  SALARY,
+  ADDRESS,
+  LATEST_BY_OFFSET(ROWTIME) AS LAST_ROW_TIME
+FROM customer_stream
+GROUP BY 
+  CUSTOMER_ID, NAME, EMAIL, GENDER, AGE, SALARY, ADDRESS
+EMIT CHANGES;
