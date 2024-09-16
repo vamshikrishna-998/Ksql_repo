@@ -1,0 +1,123 @@
+{
+  "type": "record",
+  "name": "BankAccount",
+  "namespace": "com.example",
+  "fields": [
+    {
+      "name": "customer_id",
+      "type": "string"
+    },
+    {
+      "name": "account_number",
+      "type": "string"
+    },
+    {
+      "name": "bank_name",
+      "type": "string"
+    },
+    {
+      "name": "branch",
+      "type": "string"
+    },
+    {
+      "name": "account_type",
+      "type": "string"
+    },
+    {
+      "name": "balance",
+      "type": "double"
+    },
+    {
+      "name": "event_type",
+      "type": "string"
+    },
+    {
+      "name": "event_timestamp",
+      "type": "string",
+      "logicalType": "timestamp-millis"
+    },
+    {
+      "name": "transaction",
+      "type": {
+        "type": "record",
+        "name": "Transaction",
+        "fields": [
+          {
+            "name": "transaction_id",
+            "type": "string"
+          },
+          {
+            "name": "transaction_date",
+            "type": "string",
+            "logicalType": "date"
+          },
+          {
+            "name": "amount",
+            "type": "double"
+          }
+        ]
+      }
+    },
+    {
+      "name": "endorsements",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "Endorsement",
+          "fields": [
+            {
+              "name": "EndorsementNumber",
+              "type": "int"
+            },
+            {
+              "name": "PolicyNumber",
+              "type": "string"
+            },
+            {
+              "name": "PolicyExpirationDate",
+              "type": "string",
+              "logicalType": "date"
+            },
+            {
+              "name": "EndorsementPurposeId",
+              "type": "int"
+            },
+            {
+              "name": "Documents",
+              "type": {
+                "type": "array",
+                "items": {
+                  "type": "record",
+                  "name": "EndorsementDocument",
+                  "fields": [
+                    {
+                      "name": "Uid",
+                      "type": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "documents",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "Document",
+          "fields": [
+            {
+              "name": "Uid",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
