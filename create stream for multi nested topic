@@ -1,0 +1,26 @@
+CREATE STREAM nested_stream (
+  customer_id STRING,
+  account_number STRING,
+  bank_name STRING,
+  branch STRING,
+  account_type STRING,
+  balance DOUBLE,
+  event_type STRING,
+  event_timestamp STRING,
+  transaction STRUCT<
+    transaction_id STRING,
+    transaction_date STRING,
+    amount DOUBLE
+  >,
+  endorsements ARRAY<STRUCT<
+    EndorsementNumber INT,
+    PolicyNumber STRING,
+    PolicyExpirationDate STRING,
+    EndorsementPurposeId INT,
+    Documents ARRAY<STRUCT<Uid STRING>>
+  >>,
+  documents ARRAY<STRUCT<Uid STRING>>
+) WITH (
+  KAFKA_TOPIC = 'nested_topic',
+  VALUE_FORMAT = 'JSON'
+);
