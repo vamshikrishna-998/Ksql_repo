@@ -1,0 +1,12 @@
+CREATE STREAM customer_stream (
+    customer_id STRING,
+    name STRING,
+    email STRING,
+    gender STRING,
+    age INT,
+    salary INT,
+    address STRING
+) WITH (
+    KAFKA_TOPIC = 'customer_topic',
+    VALUE_FORMAT = 'JSON'
+);
